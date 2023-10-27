@@ -9,7 +9,7 @@ func main() {
     z01.PrintRune(char)
     char++
    }
-   z01.PrintRune('\n')
+ z01.PrintRune('\n')
 }
 
 
