@@ -9,5 +9,4 @@ func main() {
 		char--
 	}
 	z01.PrintRune('\n')
-
 }
