@@ -1,22 +1,13 @@
-package main
+package piscine
 
-import "fmt"
-
-func iterativefactorial(n int) int {
+func IterativeFactorial(nb int) int {
 	f := 1
-	if n < 0 {
+	if nb < 0 {
 		return 0
 	} else {
-		for i := 1; i <= n; i++ {
+		for i := 1; i <= nb; i++ {
 			f = f * i
 		}
 	}
-
-return f	
-}
-
-func main() {
-	factorial := 4
-	fmt.Printf("%v", iterativefactorial(factorial))
-	fmt.Printf("\n")
+	return f
 }
