@@ -5,10 +5,11 @@ func IterativePower(nb1 int, power int) int {
 	i := 0
 	if power <= 0 {
 		return 0
-	}
+	} else {
 		for i <= power {
 			nb = nb * nb1
 			i++
 		}
+	}
 	return nb
 }
