@@ -5,11 +5,9 @@ func Fibonacci(index int) int {
 		return -1
 	} else if index == 0 {
 		return 0
-	}  
-	if index == 1 {
+	} else if index == 1 {
 		return 1
-	} else { 
+	} else {
 		return index - 1 + index - 2
-    }
+	}
 }
-
