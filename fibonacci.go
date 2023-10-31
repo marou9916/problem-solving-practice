@@ -8,6 +8,6 @@ func Fibonacci(index int) int {
 	} else if index == 1 {
 		return 1
 	} else {
-		return index - 1 + index - 2
+		return Fibonacci(index - 1)  + Fibonacci(index -2)
 	}
 }
