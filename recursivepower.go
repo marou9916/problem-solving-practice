@@ -1,7 +1,6 @@
 package piscine
 
-func RecursivePower(nb1 int, power int) int {
-	nb := nb1
+func RecursivePower(nb int, power int) int {
 	if power == 0 {
 		return 1
 	} else if power < 0 {
