@@ -5,3 +5,6 @@ func LastRune(Characters string) rune {
 	return convertedCharacters[len(convertedCharacters)-1]
 }
 
+
+
+
