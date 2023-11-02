@@ -10,4 +10,3 @@ func NRune(s string, n int) rune {
 	}
 }
 
-
