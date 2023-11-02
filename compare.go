@@ -14,7 +14,7 @@ func Compare(a string, b string) int {
 			}
 		}
 	} else if len(a) > len(b) {
-		return -1
+		return 1
 	}
 	return 0
 }
