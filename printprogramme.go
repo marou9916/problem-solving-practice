@@ -1,11 +1,8 @@
 package piscine
 
-import {
-	"fmt"
-	"os"
-}
+import github.com/01-edu/z01
 
 func PrintProgramme() {
 	myProgramName = os.Args[0]
-	fmt.Println(myProgramName)
+	z01.PrintRune(myProgramName)
 }
