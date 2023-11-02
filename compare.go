@@ -17,5 +17,5 @@ func Compare(a string, b string) int {
 		return -1
 	}
 	return 0
-
 }
+
