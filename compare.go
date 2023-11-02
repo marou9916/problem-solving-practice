@@ -18,4 +18,3 @@ func Compare(a string, b string) int {
 	}
 	return 0
 }
-
