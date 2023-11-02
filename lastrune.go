@@ -1,9 +1,10 @@
 package piscine
 
-func LastRune(Characters string) rune {
-	convertedCharacters := []rune(Characters)
-	return convertedCharacters[len(convertedCharacters)-1]
+func LastRune(s string) rune {
+	s1 := []rune(s)
+	return s1[len(s)-1]
 }
+
 
 
 
