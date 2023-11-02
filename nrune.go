@@ -1,3 +1,5 @@
+package piscine
+
 func NRune(s string, n int) rune {
 s1 := []rune(s)
 if n < 0 || n > len(s) - 1 {
@@ -6,5 +8,6 @@ if n < 0 || n > len(s) - 1 {
 	return s1[n]
 }
 }
+
 
 
