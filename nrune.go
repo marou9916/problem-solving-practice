@@ -7,10 +7,11 @@ func NRune(s string, n int) rune {
 	} else {
 		for index := range s {
 			if index == n {
-				index = n-1
+				index = n - 1
 			}
 			break
 		}
 		return s1[index]
 	}
 }
+
