@@ -1,8 +1,8 @@
 package piscine
 
-func Any(f func(string) bool, arr []string) bool {
-	for _, v := range arr {
-		if f(v) {
+func Any(f func(string) bool, a []string) bool {
+	for _, element := range a {
+		if f(element) {
 			return true
 		}
 	}
