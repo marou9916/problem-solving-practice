@@ -2,14 +2,30 @@ package main
 
 import "github.com/01-edu/z01"
 
-type Door struct {
-	state string
+func main() {
+	door := &Door{}
+
+	OpenDoor(door)
+	if IsDoorClose(door) {
+		OpenDoor(door)
+	}
+	if IsDoorOpen(door) {
+		CloseDoor(door)
+	}
+	if door.state == "OPEN" {
+		CloseDoor(door)
+	}
 }
 
 func PrintStr(s string) {
 	for _, r := range s {
 		z01.PrintRune(r)
 	}
+	z01.PrintRune('\n')
+}
+
+type Door struct {
+	state string
 }
 
 func CloseDoor(ptrDoor *Door) bool {
@@ -39,20 +55,5 @@ func IsDoorClose(ptrDoor *Door) bool {
 		return true
 	} else {
 		return false
-	}
-}
-
-func main() {
-	door := &Door{}
-
-	OpenDoor(door)
-	if IsDoorClose(door) {
-		OpenDoor(door)
-	}
-	if IsDoorOpen(door) {
-		CloseDoor(door)
-	}
-	if door.state == "OPEN" {
-		CloseDoor(door)
 	}
 }
