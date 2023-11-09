@@ -55,4 +55,4 @@ func main() {
 	if door.state == "OPEN" {
 		CloseDoor(door)
 	}
-} 
+}
