@@ -13,16 +13,15 @@ func TestRot14(s string) string {
 		} else if s1[i] == 'N' {
 			s1[i] = 'A'
 		} else if s1[i] >= 'o' && s1[i] <= 'z' || s1[i] >= 'O' && s1[i] < 'Z' {
-			s1[i] += 12
+			s1[i] -= 12
 		}
 	}
 	result += string(s1)
-	return string(result)
+	return result
 }
 
 func main() {
 	result := TestRot14("Hello! How are You?")
-
 	for _, r := range result {
 		z01.PrintRune(r)
 	}
