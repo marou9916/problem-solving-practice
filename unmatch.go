@@ -4,7 +4,7 @@ func Unmatch(a []int) int {
 	for _, i := range a {
 		count := 0
 		for _, j := range a {
-			if b == i {
+			if j == i {
 				count++
 			}
 		}
