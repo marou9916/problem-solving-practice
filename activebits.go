@@ -6,5 +6,5 @@ func ActiveBits(n int) int {
 		count += 1
 		n >>= 1
 	}
-	return int(count)
+	return count
 }
