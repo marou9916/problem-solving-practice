@@ -1,12 +1,12 @@
 package piscine
 
 func Join(strs []string, sep string) string {
-	concatenated := ""
+	str := ""
 	for index, strTable := range strs {
-		concatenated += strTable
-		if index != len(concatenated)-1 {
-			concatenated += sep
+		str += strTable
+		if index != len(strs)-1 {
+			str += sep
 		}
 	}
-	return concatenated
+	return str
 }
