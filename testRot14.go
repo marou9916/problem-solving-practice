@@ -1,7 +1,5 @@
 package piscine
 
-import "github.com/01-edu/z01"
-
 func TestRot14(s string) string {
 	s1 := []rune(s)
 	var result string
@@ -18,12 +16,4 @@ func TestRot14(s string) string {
 	}
 	result += string(s1)
 	return result
-}
-
-func main() {
-	result := TestRot14("Hello! How are You?")
-	for _, r := range result {
-		z01.PrintRune(r)
-	}
-	z01.PrintRune('\n')
 }
