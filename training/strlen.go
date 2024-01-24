@@ -1,4 +1,4 @@
-package piscine
+package training
 
 func StrLen(s string) int {
 	s1 := []rune(s)
@@ -9,15 +9,14 @@ func StrLen(s string) int {
 	return runesCounter
 }
 
-func IntToRune(the_number int) []rune {
+func IntToRune(number int) []rune {
 	div := 10
 	var reste int
 	var digits_of_the_number []rune
-	for the_number != 0 {
-		reste = the_number % div
+	for number > 0 {
+		reste = number % div
 		digits_of_the_number = append(digits_of_the_number, rune(reste+'0'))
-		the_number = the_number / div
+		number = number / div
 	}
 	return digits_of_the_number
-
 }

@@ -1,4 +1,4 @@
-package piscine
+package training
 
 import "github.com/01-edu/z01"
 

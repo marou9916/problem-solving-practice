@@ -1,4 +1,4 @@
-package piscine
+package training
 
 func LastRune(s string) rune {
 	s1 := []rune(s)

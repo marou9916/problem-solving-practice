@@ -1,4 +1,4 @@
-package piscine
+package training
 
 func IsPowerOf2(number int) bool {
 	const div = 2
