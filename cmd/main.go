@@ -16,9 +16,14 @@ func main() {
 	}
 
 	//Récupérer la valeur1, l'opérateur et la valeur2
-	x := args[0]
+	x := training.Atoi2(args[0]) //conversion de la valeur1
 	operator := args[1]
-	y := args[2]
+	y := training.Atoi2(args[2]) //conversion de la valeur2
+
+	//Si les valeurs d'entrées dépassent les valeurs seuils on ne renvoie rien
+	if (x <= 0 || x >= 4294967295) || (y <= 0 || y >= 4294967295) {
+		return
+	}
 
 	//Afficher le résultat de l'opération
 	fmt.Println(training.Doop(x, operator, y))

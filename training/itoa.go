@@ -7,12 +7,10 @@ func Itoa(the_int int) string {
 	rest := 0
 	result := ""
 
-	//Gérer le signe du nombre
+	//Gérer le signe du nombre négatif
 	if the_int < 0 {
 		result += "-"
 		number *= -1
-	} else {
-
 	}
 
 	//Récupérer les digits du nombre en runes dans un tableau de runes

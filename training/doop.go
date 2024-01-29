@@ -2,38 +2,34 @@ package training
 
 import "fmt"
 
-func Doop(x string, operator string, y string) string {
+func Doop(x int, operator string, y int) string {
 	//Déclaration de la variable de stockage du résultat
 	var output int
-
-	//Convertir en entier les valeurs d'entrées
-	value1 := Atoi(x)
-	value2 := Atoi(y)
 
 	//Effectuer l'opération selon l'opérateur
 	switch operator {
 	case "+":
-		output = value1 + value2
+		output = x + y
 	case "-":
-		output = value1 - value2
+		output = x - y
 	case "*":
-		output = value1 * value2
+		output = x * y
 	case "/":
-		if value2 == 0 {
+		if y == 0 {
 			fmt.Println("No division by 0")
 		} else {
-			output = value1 / value2
+			output = x / y
 		}
 	case "%":
-		if value2 == 0 {
+		if y == 0 {
 			fmt.Println("No modulo by 0")
 		} else {
-			output = value1 % value2
+			output = x % y
 		}
 	default:
-
+		fmt.Print()
 	}
 
-	//Retourner le résultat de l'opération après conversion en string
+	// Retourner le résultat de l'opération après conversion en string
 	return Itoa(output)
 }
