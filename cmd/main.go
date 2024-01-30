@@ -21,10 +21,10 @@ func main() {
 	y := training.Atoi2(args[2]) //conversion de la valeur2
 
 	//Si les valeurs d'entrées dépassent les valeurs seuils on ne renvoie rien
-	if (x <= 0 || x >= 4294967295) || (y <= 0 || y >= 4294967295) {
+	if (x <= -2147483648 || x >= 2147483647) || (y <= -2147483648 || y >= 2147483647) {
 		return
 	}
 
 	//Afficher le résultat de l'opération
-	fmt.Println(training.Doop(x, operator, y))
+	fmt.Print(training.Doop(x, operator, y))
 }

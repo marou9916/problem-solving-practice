@@ -27,7 +27,6 @@ func Doop(x int, operator string, y int) string {
 			output = x % y
 		}
 	default:
-		fmt.Print()
 	}
 
 	// Retourner le résultat de l'opération après conversion en string
