@@ -1,7 +1,7 @@
 package training
 
 func Atoi2(s string) int {
-	var x int // Entier à retourner
+	var x int //Entier à retourner
 	decimal := 1
 	signe := 1
 

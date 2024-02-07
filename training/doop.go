@@ -27,6 +27,7 @@ func Doop(x int, operator string, y int) string {
 			output = x % y
 		}
 	default:
+		break
 	}
 
 	// Retourner le résultat de l'opération après conversion en string
