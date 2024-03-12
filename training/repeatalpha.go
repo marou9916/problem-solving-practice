@@ -43,3 +43,33 @@ func AlphaIndex(letter rune) int {
 
 	return index
 }
+
+//Version 2
+
+// func IsLetter(character rune) bool {
+// 	return (character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z')
+// }
+
+// func GetPositionInAlphabet(letter rune) int {
+// 	var index int
+
+// 	if letter >= 'a' && letter <= 'z' {
+// 		for i := 'a'; i <= letter; i++ {
+// 			index++
+// 		}
+// 	}
+
+// 	if letter >= 'A' && letter <= 'Z' {
+// 		for i := 'A'; i <= letter; i++ {
+// 			index++
+// 		}
+// 	}
+// 	return index
+// }
+
+// func RepeatAlpha2(letter rune) {
+// 	index := GetPositionInAlphabet(letter)
+// 	for i := 1; i <= index; i++ {
+// 		z01.PrintRune(letter)
+// 	}
+// }

@@ -1,7 +1,7 @@
 package training
 
 func Inter(firstString string, secondString string) string {
-	var result string //la string contenant les lettres communes aux deux strings dans l'ordre de la première sans double
+	var result string //la string contenant les lettres communes aux deux strings dans l'ordre de la première sans doubles
 
 	for _, letterinfirststring := range firstString {
 		//Si la lettre est dans la seconde string et n'est pas encore rangée dans le résultat
