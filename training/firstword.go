@@ -1,5 +1,7 @@
 package training
 
+import "unicode"
+
 func FirstWord(input string) string {
 	var output string
 
@@ -13,11 +15,11 @@ func FirstWord(input string) string {
 		} else {
 			output += string(character)
 		}
-	} 
+	}
 
 	return output
 }
 
 func IsSpace(character rune) bool {
-	return (character == ' ')
+	return unicode.IsSpace(character)
 }
