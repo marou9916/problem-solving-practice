@@ -1,8 +1,6 @@
 package training
 
-import (
-	"strings"
-)
+import "strings"
 
 func CleanStr(s1 string) string {
 	var s2 strings.Builder
@@ -29,3 +27,22 @@ func CleanStr(s1 string) string {
 	}
 	return s2.String()
 }
+
+// func CleanStr(s1 *string) {
+// 	var builder strings.Builder
+// 	inWord := false
+
+// 	for _, char := range *s1 {
+// 		if IsSpace(char) {
+// 			inWord = false
+// 		} else {
+// 			if builder.Len() > 0 && !inWord {
+// 				builder.WriteRune(' ')
+// 			}
+// 			builder.WriteRune(char)
+// 			inWord = true
+// 		}
+// 	}
+
+// 	*s1 = builder.String()
+// }
