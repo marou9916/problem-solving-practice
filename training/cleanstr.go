@@ -25,6 +25,16 @@ func CleanStr(s1 string) string {
 
 		}
 	}
+
+	if temp != "" {
+		if addSpace {
+			s2.WriteString(" ")
+		}
+		s2.WriteString(temp)
+		temp = ""
+		addSpace = true
+	}
+
 	return s2.String()
 }
 
