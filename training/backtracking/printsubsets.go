@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//Print all subsets of a given set or array
+
 func main() {
 	arr := []int{1, 2, 3}
 	result := [][]int{}
