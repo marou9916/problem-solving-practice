@@ -1,19 +1,4 @@
-package main
-
-import "fmt"
-
-//Print all subsets of a given set or array
-
-func main() {
-	arr := []int{1, 2, 3}
-	result := [][]int{}
-	current := []int{}
-	result = GenerateSubSet(arr, 0, current, result)
-
-	for _, subset := range result {
-		fmt.Println(subset)
-	}
-}
+package backtracking
 
 func GenerateSubSet(arr []int, index int, current []int, result [][]int) [][]int {
 	temp := make([]int, len(current))
