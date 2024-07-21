@@ -14,15 +14,16 @@ func CountPaths(firstRoom, secondRoom Room) int {
 
 	currentPath = append(currentPath, startRoom.name)
 
-	for _, room := range currentRoom.linkedRooms { //you can do a better choice of variable name for 'room'. Instead, why not "nextRoom"?
-		if room.name == endRoom.name {
+	for _, nextRoom := range currentRoom.linkedRooms {
+		if nextRoom.name == endRoom.name {
 			pathCounterBetweenTwoRooms++
 		} else {
-			if IsAlreadyInTheCurrentPath(currentPath, room) {
+			if IsAlreadyInTheCurrentPath(currentPath, nextRoom) {
 				continue
 			} else {
-				currentPath = append(currentPath, room.name)
-				pathCounterBetweenTwoRooms += CountPaths(room, secondRoom)  //updating the counter properly after each recursive call
+				currentPath = append(currentPath, nextRoom.name)
+				pathCounterBetweenTwoRooms += CountPaths(nextRoom, secondRoom)
+				currentPath = currentPath[:len(currentPath)-1] //now you do backtrack
 			}
 		}
 	}
@@ -36,3 +37,4 @@ func IsAlreadyInTheCurrentPath(currentPath []string, roomToCheck Room) bool {
 	}
 	return false
 }
+
