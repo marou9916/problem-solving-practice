@@ -14,7 +14,7 @@ func CountPaths(firstRoom, secondRoom Room) int {
 
 	currentPath = append(currentPath, startRoom.name)
 
-	for _, room := range currentRoom.linkedRooms {
+	for _, room := range currentRoom.linkedRooms { //you can do a better choice of variable name for 'room'. Instead, why not "nextRoom"?
 		if room.name == endRoom.name {
 			pathCounterBetweenTwoRooms++
 		} else {
@@ -22,8 +22,7 @@ func CountPaths(firstRoom, secondRoom Room) int {
 				continue
 			} else {
 				currentPath = append(currentPath, room.name)
-				currentRoom = room                  // no need for this line
-				CountPaths(currentRoom, secondRoom) // each recursive call explore a different option, need to store the sum of all that options into the counter variable
+				pathCounterBetweenTwoRooms += CountPaths(room, secondRoom)  //updating the counter properly after each recursive call
 			}
 		}
 	}
