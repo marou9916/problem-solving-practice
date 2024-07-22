@@ -37,4 +37,3 @@ func IsAlreadyInTheCurrentPath(currentPath []string, roomToCheck Room) bool {
 	}
 	return false
 }
-
