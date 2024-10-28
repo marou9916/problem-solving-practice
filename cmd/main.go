@@ -6,6 +6,11 @@ import (
 )
 
 func main() {
-	arr := []int{10, 10, 10}
-	fmt.Println(arrays.SecondLargestElement(arr))
+	arr := []int{1, -2}
+	mn, err := arrays.MissingNumber(arr)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(mn)
+	}
 }
