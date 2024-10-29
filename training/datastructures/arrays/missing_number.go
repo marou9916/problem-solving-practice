@@ -2,44 +2,32 @@ package arrays
 
 import "errors"
 
-// First version
 func MissingNumber(arr []int) (int, error) {
-	missingOne := 0
 
-	if len(arr) < 1 && NoNegativeNumber(arr) {
-		for i := 1; i <= len(arr)+1; i++ {
-			if !ElementIsNotInArray(arr, i) {
-				continue
-			} else {
-				return i, nil
-			}
-		}
-	} else {
-		return -1, errors.New("no negative number in array")
+	if len(arr) < 1 {
+		return -1, errors.New("l'array doit au moins contenir un élément")
+	} else if IsThereNegativeNumber(arr) {
+		return -1, errors.New("no negative number in the array please")
 	}
-	return missingOne, nil
-}
+	n := len(arr) + 1
 
-func ElementIsNotInArray(arr []int, element int) bool {
-	for index, x := range arr {
-		if element == x {
-			return false
-		} else if index == len(arr)-1 {
+	//CAlculer la somme des entiers de l'array
+	sum1 := 0
+	for _, element := range arr {
+		sum1 += element
+	}
+
+	//CAlculer la somme des n premiers entiers
+	sum2 := n * (n + 1) / 2
+
+	//Faire la différence des sommes pour obtenir l'élément manquant
+	return (sum2 - sum1), nil
+}
+func IsThereNegativeNumber(arr []int) bool {
+	for _, element := range arr {
+		if element < 0 {
 			return true
 		}
 	}
 	return false
 }
-
-func NoNegativeNumber(arr []int) bool {
-	for _, element := range arr {
-		if element > 0 {
-			continue
-		} else {
-			return false
-		}
-	}
-	return true
-}
-
-//Second one
