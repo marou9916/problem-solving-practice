@@ -9,19 +9,19 @@ func MissingNumber(arr []int) (int, error) {
 	} else if IsThereNegativeNumber(arr) {
 		return -1, errors.New("no negative number in the array please")
 	}
-	n := len(arr) + 1
 
-	//CAlculer la somme des entiers de l'array
-	sum1 := 0
-	for _, element := range arr {
-		sum1 += element
+	numMap := make(map[int]bool) //Créer une map des éléments de l'array
+
+	for _, num := range arr { // Remplir la map(carte)
+		numMap[num] = true
 	}
 
-	//CAlculer la somme des n premiers entiers
-	sum2 := n * (n + 1) / 2
-
-	//Faire la différence des sommes pour obtenir l'élément manquant
-	return (sum2 - sum1), nil
+	for i := 1; i <= len(arr)+1; i++ { //Vérifier l'élément manquant
+		if !numMap[i] {
+			return i, nil //Retourner cet élément
+		}
+	}
+	return -1, errors.New("no missing number")
 }
 func IsThereNegativeNumber(arr []int) bool {
 	for _, element := range arr {
