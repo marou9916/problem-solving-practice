@@ -1,26 +1,39 @@
 package training
 
-import "fmt"
+import "sort"
 
 func FindTriplets(arr []int) [][]int {
 	var result [][]int
 
-	for i := 0; i <= len(arr)-1; i++ { //prendre un 1er élément à une position
-		for j := i + 1; j <= len(arr)-1; j++ { //prendre un 2nd élément à une autre position
-			if j == i {
-				continue
-			}
-			for k := j + 1; k <= len(arr)-1; k++ { //prendre un 3eme élément à une autre position
-				if k == j {
-					continue //sauter les cas de doublons
+	sort.Ints(arr) //tri du tableau
+
+	for i := 0; i <= len(arr)-2; i++ {
+		left, right := i+1, len(arr)-1
+		sum := arr[i] + arr[left] + arr[right]
+
+		for left < right {
+			if sum == 0 {
+				result = append(result, []int{i, left, right})
+
+				for left < right && arr[left] == arr[left+1] {
+					left++
 				}
-				fmt.Printf("Triplet{%d, %d, %d},\n", i, j, k)
-				if arr[i] + arr[j] + arr[k] == 0 { //si la somme est zéro
-					fmt.Printf("Solution ajoutée{%d, %d, %d},\n", i, j, k) //enregistrer le triplet 
-					result = append(result, []int{i, j, k})
+
+				for left < right && arr[right] == arr[right-1] {
+					right--
 				}
+
+				left++
+				right--
+
+			} else if sum < 0 {
+				left++
+				
+			} else if sum > 0 {
+				right--
 			}
 		}
+
 	}
 	return result
 }
