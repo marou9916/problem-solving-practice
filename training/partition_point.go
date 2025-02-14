@@ -49,10 +49,8 @@ func PartitionPoint(arr []int) int {
 			}
 		}
 
-		for  maxLeft < minRight {
-			if currentElement > maxLeft && currentElement < minRight {
-				return i
-			}
+		if currentElement > maxLeft && currentElement < minRight {
+			return i
 		}
 
 	}
