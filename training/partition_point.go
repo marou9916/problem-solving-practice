@@ -1,58 +1,41 @@
 package training
 
-// func PartitionPoint(arr []int) int {
-// 	var result int = -1
-
-// 	for i := 1; i <= len(arr)-2; i++ {
-// 		currentElement := arr[i]
-// 		left, right := i-1, i+1
-
-// 		for left >= 0 && right <= len(arr)-1 {
-// 			if arr[left] < currentElement {
-// 				left--
-// 			} else {
-// 				return -1
-// 			}
-
-// 			if arr[right] > currentElement {
-// 				right++
-// 			} else {
-// 				return -1
-// 			}
-
-// 			if left == 0 && right == len(arr)-1 {
-// 				return i
-// 			}
-// 		}
-// 	}
-// 	return result
-// }
-
+//Now, i'm not gonna calculate the leftMax and the rightMin for each element at each time. Instead, i calculate all of them once
+//in order to reduce complexity and improve efficiency
 func PartitionPoint(arr []int) int {
-	var result int = -1
+	n := len(arr)
 
-	for i := 1; i <= len(arr)-2; i++ {
-		currentElement := arr[i]
-		maxLeft, minRight := arr[i-1], arr[i+1]
+	if n < 3 {
+		return -1
+	}
+	
+	leftMax := make([]int, n) 
+	leftMax[0] = arr[0]
 
-		//Trouver le max à gauche
-		for j := i - 1; j >= 0; j-- {
-			if arr[j] > maxLeft {
-				maxLeft = arr[j]
-			}
+	minRight := make([]int, n)
+	minRight[n-1] = arr[n-1]
+
+	for i := 1; i <= n - 2; i++ {
+		if arr[i] > leftMax[i-1] {
+			leftMax = append(leftMax, arr[i])
+		} else {
+			leftMax = append(leftMax, leftMax[i-1])
 		}
+	}
 
-		//Trouver le min à droite
-		for k := i + 1; k <= len(arr)-1; k++ {
-			if arr[k] < minRight {
-				minRight = arr[k]
-			}
+	for i := n-2; i >= 1; i-- {
+		if arr[i] < minRight[i+1] {
+			minRight = append(minRight, arr[i])
+		} else {
+			minRight = append(minRight, minRight[i+1])
 		}
+	}
 
-		if currentElement > maxLeft && currentElement < minRight {
+	for i := 1; i <= n-2; i++ {
+		if arr[i] > leftMax[i-1] && arr[i] < minRight[i+1] {
 			return i
 		}
-
 	}
-	return result
+
+	return -1
 }
