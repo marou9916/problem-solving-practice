@@ -8,14 +8,10 @@ func PartitionPoint(arr []int) int {
 	}
 
 	minRight := make([]int, n)
-	minRight[n - 2] = arr[n - 2] 
+	minRight[n - 1] = arr[n - 1] 
 	
-	for i := n-3; i >= 0; i-- {
-		if minRight[i+1] < arr[i+1] {
-			minRight[i] = minRight[i+1]
-		} else {
-			minRight[i] = arr[i+1]
-		}
+	for i := n-2; i >= 0; i-- {
+		minRight[i] = min(minRight[i+1], arr[i+1])
 	}
 
 	maxLeft := arr[0]
@@ -24,10 +20,22 @@ func PartitionPoint(arr []int) int {
 		if arr[j] > maxLeft && arr[j] < minRight[j] {
 			return j
 		}
-		if arr[j] > maxLeft {
-			maxLeft = arr[j]
-		} 
+		maxLeft = max(maxLeft, arr[j]) 
 	}
 
 	return -1
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
