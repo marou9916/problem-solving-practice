@@ -7,6 +7,7 @@ import (
 
 func main() {
 	arr1 := []int{0, -1, 2, -3, 1}
-	fmt.Printf("Résultat final: %v\n", training.FindTriplets(arr1))
+	target := 9
+	fmt.Printf("Indice: %v\n", training.LinearSearch(arr1, target))
 
 }
