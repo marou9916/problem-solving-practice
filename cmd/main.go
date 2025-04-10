@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	arr1 := []int{0, -1, 2, -3, 1}
-	target := 9
-	fmt.Printf("Indice: %v\n", training.LinearSearch(arr1, target))
+	arr1 := []int{90, 70, 20, 80, 50}
+	target := 45
+	fmt.Println(training.FindPair(arr1, uint(target)))
 
 }
