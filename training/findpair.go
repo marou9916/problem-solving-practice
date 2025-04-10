@@ -1,24 +1,15 @@
 package training
 
-import (
-	"math"
-	"sort"
-)
+func FindPair(arr []int, x int) string {
 
-func FindPair(arr []int, x uint) string {
-	//Sort array
-	sort.Ints(arr)
+	seen := make(map[int]bool)
 
-	left, right := 0, len(arr)-1
-
-	for left < right {
-		if math.Abs(float64(arr[left])-float64(arr[right])) == float64(x) {
+	for _, element := range arr {
+		if seen[element+x] || seen[element-x] {
 			return "Yes"
-		} else if math.Abs(float64(arr[left])-float64(arr[right])) > float64(x) {
-			right--
-		} else if math.Abs(float64(arr[left])-float64(arr[right])) < float64(x) {
-			left++
 		}
+
+		seen[element] = true
 	}
 	return "No"
 }
