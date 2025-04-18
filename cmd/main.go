@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	arr1 := []int{12, 34, 10, 6, 40}
+	arr1 := []int{10}
 	fmt.Println(training.LargestPairSum(arr1))
 
 }

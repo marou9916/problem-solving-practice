@@ -1,26 +1,20 @@
 package training
 
 func LargestPairSum(arr []int) int {
-	max := arr[0]
-	largestSum := -1
 	if len(arr) < 2 {
 		return -1
 	}
 
-	for _, element := range arr {
-		if element > max {
-			max = element
+	first, second := -1, -1
+
+	for _, value := range arr {
+		if value > first {
+			second = first
+			first = value
+		} else if value > second {
+			second = value
 		}
 	}
 
-	for i := range arr {
-		if arr[i] == max {
-			continue
-		}
-		if max+arr[i] > largestSum {
-			largestSum = max + arr[i]
-		}
-	}
-
-	return largestSum
+	return first + second
 }
