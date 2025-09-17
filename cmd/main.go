@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	arr1 := []int{7, 10, 4, 3, 20, 15}
-	fmt.Println(training.KthSmallestElement(arr1, 3))
+	arr1 := []int{20, 10, 5, 7, 40, 30}
+	fmt.Println(training.LargestElement(arr1))
 
 }
