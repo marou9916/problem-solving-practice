@@ -41,3 +41,22 @@ func getMin(arr []int) int {
 func getIndex(arr map[int]int, key int) int {
 	return arr[key]
 }
+
+// func ClosestPair(arr1 []int, arr2 []int, x int) (int, int) {
+// 	minDiff := math.MaxInt
+// 	index1, index2 := 0, 0
+
+// 	for i := 0; i < len(arr1); i++ {
+// 		for j := 0; j < len(arr2); j++ {
+// 			sum := arr1[i] + arr2[j]
+// 			diff := int(math.Abs(float64(sum - x)))
+
+// 			if diff < minDiff {
+// 				minDiff = diff
+// 				index1, index2 = i, j
+// 			}
+// 		}
+// 	}
+
+// 	return arr1[index1], arr2[index2]
+// }
